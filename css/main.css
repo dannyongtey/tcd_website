@@ -1,0 +1,36 @@
+/* GLOBAL STYLES */
+
+body {
+	font-size: 16px;
+}
+
+/* HERO STYLES */
+.hero-section {
+	height: 100vh;
+	width: 100%;
+	background-color: #02052d;
+	box-sizing: border-box;
+	padding-top: 10vh;
+}
+
+.hero-section .particles{
+}
+
+.hero-section h3 {
+	text-align: center;
+	color: #fff;
+}
+
+.hero-section .event-date {
+	position: relative;
+	font-size: 2.0em;
+}
+
+.hero-section img {
+	position: relative;
+	width: 10%;
+	height:  auto;
+	left: 50%;
+	transform: translate(-50%, 0);
+	margin-top: 20px;
+}
