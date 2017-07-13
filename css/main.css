@@ -199,7 +199,8 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.about-section .history-text, .explain-section p {
+.about-section .history-text,
+.explain-section p {
     width: 60%;
     margin: 50px auto 0 auto;
     font-size: 1.5em;
@@ -213,3 +214,53 @@ body {
     font-size: 3em;
 }
 
+
+/*EVENT-STATS SECTION */
+
+.event-stats {
+    margin-top: 50px;
+    height: 70vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.event-stats .past-employers {
+    flex: 0 1 auto;
+}
+
+.event-stats .past-employers div{
+    display: inline-block;
+}
+
+.event-stats .past-employers img {
+    display: inline-block;
+    width: 10vh;
+    height: 10vh;
+    margin: 1vh;
+}
+
+.event-stats .past-employers h3 {
+	font-size: 1.5em;
+	margin: 12px 0 0 1vh;
+}
+
+.photos-section {
+    position: relative;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.photos-section img {
+    width: auto;
+    height: 70vh;
+    position: relative;
+}
+
+
+/*SPONSORS SECTION */
+
+.sponsors-section {
+    height: 40vh;
+}

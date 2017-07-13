@@ -20,7 +20,7 @@ logo_link: /images/logo.png
     	</h3>
         <div class="history-text">
             <p>
-                Tech Career Days (formerly known as IT Career Week) is an annual 2-days tech jobs fair organized by IT Society MMU Cyberjaya that aims to address the needs of startups and tech companies to find tech talents while at the same time help students secure internships, full-time or freelance jobs as well as explore possible career paths in the future. 
+                Tech Career Days (formerly known as IT Career Week) is an annual 2-days tech jobs fair organized by IT Society MMU Cyberjaya that aims to address the needs of startups and tech companies to find tech talents while at the same time help students secure internships, full-time or freelance jobs as well as explore possible career paths in the future.
             </p>
             <p>
                 Find talents. Make valueable connections. Be part of Tech Career Days.
@@ -30,9 +30,36 @@ logo_link: /images/logo.png
             <h3 class="explain-title">
  							 	Why the Name Change?
         		</h3>
-        		<p>
-        			  If you have participated in IT Career Week before, you might be wondering the reason for the name change. It is part of rebranding IT Career Week, as we found that the term "days" describes the event duration better than "week".
-        		</p>
+            <p>
+                If you have participated in IT Career Week before, you might be wondering the reason for the name change. It is part of rebranding IT Career Week, as we found that the term "days" describes the event duration better than "week".
+            </p>
         </div>
+    </div>
+    <div class="event-stats">
+
+        <div class="photos-section" id="photos-section">
+   
+        {% for image in site.static_files %} 
+	        {% if image.path contains 'images/event-photos' %}
+	        <div>
+	       		 <img src="{{ image.path }}" alt="event-photo"> 
+	       	</div>
+	        {% endif %} 
+        {% endfor %}
+
+        </div>
+        <div class="past-employers">
+        <h3>Past employers</h3>
+            {% for image in site.static_files %} 
+	        {% if image.path contains 'images/past-employers' %}
+	        <div>
+	       		 <img src="{{ image.path }}" alt="past-employers"> 
+	       	</div>
+	        {% endif %} 
+        {% endfor %}
+        </div>
+    </div>
+    <div class="sponsors-section">
+
     </div>
 </div>

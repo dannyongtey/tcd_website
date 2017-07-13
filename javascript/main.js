@@ -119,7 +119,10 @@ $(document).ready(function() {
 
 
 });
-
+$("#photos-section > div:gt(0)").hide();
+setInterval(function(){
+    $("#photos-section > div:first").fadeOut(1000).next().delay(1000).fadeIn(1000).end().appendTo("#photos-section");
+},4000);
 var eventNameTop = $(".event-name").position().top;
 var eventDateTop = $(".event-date").position().top;
 var prevTop = $(".prev-wong").position().top;
