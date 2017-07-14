@@ -19,11 +19,16 @@ body {
     z-index: 20;
     display: inline-block;
     box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+}
+
+.header.black {
+	background-color: #080031;
 }
 
 .header .nav-bar {
     float: right;
-    padding: 6vh 60px 0 0;
+    padding: 4vh 60px 0 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5em;
 }
@@ -41,6 +46,10 @@ body {
     color: #fff;
     text-decoration: none;
     transition: 0.2s ease-in-out;
+}
+
+.nav-bar.black li a {
+	color: #000;
 }
 
 .nav-bar li a:hover {
@@ -67,7 +76,7 @@ body {
     transition: 0.2s ease-in;
     top: 0;
     position: relative;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .header .event-date {
@@ -224,26 +233,33 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-bottom: 100px;
 }
 
 .event-stats .past-employers {
-    flex: 0 1 auto;
+    flex: 0 1 40%;
+    overflow: scroll;
 }
 
 .event-stats .past-employers div{
     display: inline-block;
+    width: 15%;
+    height: 10%;
+		box-sizing: border-box;
+		margin: 10px;
 }
 
 .event-stats .past-employers img {
     display: inline-block;
-    width: 10vh;
-    height: 10vh;
-    margin: 1vh;
+		width: 100%;
+		height: auto;
+    
 }
 
 .event-stats .past-employers h3 {
 	font-size: 1.5em;
 	margin: 12px 0 0 1vh;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .photos-section {
@@ -262,5 +278,35 @@ body {
 /*SPONSORS SECTION */
 
 .sponsors-section {
-    height: 40vh;
+	margin: 30px 10%;
+}
+
+.sponsors-section > div ~div {
+	margin-top: 20px;
+}
+
+.sponsors-section, .supporting-div, .media-div {
+	max-width: 60%;
+	margin: auto;
+	display: block;
+}
+
+.employers-div h3, .supporting-div h3, .media-div h3 {
+	text-align: center;
+	font-size: 2.5em;
+	color: #18469d;
+}
+
+.employers-div img{
+		float: left;
+}
+
+.supporting-div div, .media-div div {
+	text-align: center;
+}
+
+.employers-div img, .supporting-div img, .media-div img {
+	width: 10vw;
+	height: 10vw;
+	margin: 40px;
 }

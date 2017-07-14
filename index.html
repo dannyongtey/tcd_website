@@ -5,7 +5,7 @@ proposal_link: http://www.example.com
 logo_link: /images/logo.png 
 ---
 <div class="home">
-    <div class="hero-section">
+    <div class="hero-section" id = "register">
         <div id="particles-js" class="particles"></div>
         <h3 class="event-name">Tech Career Days</h3>
         <h4 class="event-tagline">"Where headhunters meet jobhunters"</h4>
@@ -14,7 +14,7 @@ logo_link: /images/logo.png
             <li><a href="{{ page.proposal_link }}">Sponsorship Proposal</a></li>
         </ul>
     </div>
-    <div class="about-section">
+    <div class="about-section" id = "about">
         <h3 class="about-title" id="about-title">
     		About Tech Career Days
     	</h3>
@@ -36,30 +36,73 @@ logo_link: /images/logo.png
         </div>
     </div>
     <div class="event-stats">
-
         <div class="photos-section" id="photos-section">
-   
-        {% for image in site.static_files %} 
-	        {% if image.path contains 'images/event-photos' %}
-	        <div>
-	       		 <img src="{{ image.path }}" alt="event-photo"> 
-	       	</div>
-	        {% endif %} 
-        {% endfor %}
-
+            {% for image in site.static_files %} {% if image.path contains 'images/event-photos' %}
+            <div>
+                <img src="{{ image.path }}" alt="event-photo">
+            </div>
+            {% endif %} {% endfor %}
         </div>
         <div class="past-employers">
-        <h3>Past employers</h3>
-            {% for image in site.static_files %} 
-	        {% if image.path contains 'images/past-employers' %}
-	        <div>
-	       		 <img src="{{ image.path }}" alt="past-employers"> 
-	       	</div>
-	        {% endif %} 
-        {% endfor %}
+            <h3>Past employers</h3> {% for image in site.static_files %} {% if image.path contains 'images/past-employers' %}
+            <div>
+                <img src="{{ image.path }}" alt="past-employers">
+            </div>
+            {% endif %} {% endfor %}
         </div>
     </div>
-    <div class="sponsors-section">
-
+    <div class="sponsors-section" id = "sponsors">
+        <div class="employers-div">
+            <h3>Participating Employers</h3>
+            {% for image in site.static_files %} 
+            {% if image.path contains 'images/current-employers' %}
+            <div>
+            	{% assign word = image.path | split: "-" %}
+            	{% if word[2] %}
+            	<a href = "http://{{ word[2] }}">
+                <img src="{{ image.path }}" alt="participating-employers">
+            	</a>
+            	{%else%}
+            		<img src="{{ image.path }}" alt="participating-employers">
+            	{% endif %}
+            </div>
+            {% endif %} 
+            {% endfor %}
+        </div>
+        <div class = "supporting-div">
+        <h3>Supporting Partners</h3>
+        	  {% for image in site.static_files %} 
+            {% if image.path contains 'images/supporting-partners' %}
+            <div>
+              {% assign word = image.path | split: "-" %}
+            	{% if word[2] %}
+            	<a href = "http://{{ word[2] }}">
+                <img src="{{ image.path }}" alt="supporting-partners">
+            	</a>
+            	{%else%}
+            		<img src="{{ image.path }}" alt="supporting-partners">
+            	{% endif %}
+            </div>
+            {% endif %} 
+            {% endfor %}
+        </div>
+        <br>
+        <div class = "media-div">
+        <h3>Media Partners</h3>
+        	  {% for image in site.static_files %} 
+            {% if image.path contains 'images/media-partners' %}
+            <div>
+              {% assign word = image.path | split: "-" %}
+            	{% if word[2] %}
+            	<a href = "http://{{ word[2] }}">
+                <img src="{{ image.path }}" alt="media-partners">
+            	</a>
+            	{%else%}
+            		<img src="{{ image.path }}" alt="media-partners">
+            	{% endif %}
+            </div>
+            {% endif %} 
+            {% endfor %}
+        </div>
     </div>
 </div>

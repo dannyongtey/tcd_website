@@ -119,31 +119,44 @@ $(document).ready(function() {
 
 
 });
+$(document).on('click', 'a', function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top -20
+    }, 500);
+});
 $("#photos-section > div:gt(0)").hide();
-setInterval(function(){
+setInterval(function() {
     $("#photos-section > div:first").fadeOut(1000).next().delay(1000).fadeIn(1000).end().appendTo("#photos-section");
-},4000);
+}, 4000);
 var eventNameTop = $(".event-name").position().top;
 var eventDateTop = $(".event-date").position().top;
 var prevTop = $(".prev-wong").position().top;
-var prevLeft = parseInt($(".prev-wong").css("left").match(/\d+/)[0]) ;
+var prevLeft = parseInt($(".prev-wong").css("left").match(/\d+/)[0]);
 $(window).scroll(function(e) {
 
         var scrollTop = $(window).scrollTop();
-/*
-        var percentUnscrolled = 1 - Math.floor(scrollTop) / prevTop;
-        console.log(percentUnscrolled);
-        if (percentUnscrolled >= 0){
-        $(".prev-wong").css("top", (percentUnscrolled * (prevTop+20))-20);
-        $(".prev-wong").css("left", (percentUnscrolled * (prevLeft+40)-40));
-        $(".prev-wong").css("transform", ("translateX("+ -(percentUnscrolled * 50) + "%)"));
-        $(".event-date").css("top", -20);
-        $(".prev-wong img").css("width", (percentUnscrolled * 190)+60);
-        $(".event-date").css("opacity", percentUnscrolled)
-    }else{
-        //$(".prev-wong").addClass("animate");
-    }
-    */
+        if (scrollTop >= $(".hero-section").innerHeight()) {
+            $(".header").addClass("black");
+        } else {
+            $(".header").removeClass("black");
+        }
+
+        /*      
+                var percentUnscrolled = 1 - Math.floor(scrollTop) / prevTop;
+                console.log(percentUnscrolled);
+                if (percentUnscrolled >= 0){
+                $(".prev-wong").css("top", (percentUnscrolled * (prevTop+20))-20);
+                $(".prev-wong").css("left", (percentUnscrolled * (prevLeft+40)-40));
+                $(".prev-wong").css("transform", ("translateX("+ -(percentUnscrolled * 50) + "%)"));
+                $(".event-date").css("top", -20);
+                $(".prev-wong img").css("width", (percentUnscrolled * 190)+60);
+                $(".event-date").css("opacity", percentUnscrolled)
+            }else{
+                //$(".prev-wong").addClass("animate");
+            }
+            */
         if (scrollTop > prevTop) {
             var leftVal = $(".prev-wong").css("left");
             $(".prev-wong").addClass("animate")
