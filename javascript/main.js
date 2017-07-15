@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 
 });
-$(document).on('click', 'a', function(event) {
+$(".nav-links .smooth").on('click', 'a', function(event) {
     event.preventDefault();
 
     $('html, body').animate({

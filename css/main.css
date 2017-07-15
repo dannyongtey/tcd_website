@@ -106,7 +106,6 @@
         text-align: center;
         line-height: 1.5em;
         font-family: 'Ubuntu', sans-serif;
-        
     }
     
     .footer a {
@@ -312,10 +311,9 @@
         color: #18469d;
     }
     
-    .employers-div img {
-        float: left;
-    }
+    .employers-div img {}
     
+    .employers-div div,
     .supporting-div div,
     .media-div div {
         text-align: center;

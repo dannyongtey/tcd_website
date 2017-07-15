@@ -3,7 +3,6 @@ layout: default
 reg_link: http://www.example.com 
 proposal_link: http://www.example.com 
 logo_link: /images/logo.png 
-resume_link: http://www.example.com 
 ---
 
 <div class="home">
@@ -49,7 +48,12 @@ resume_link: http://www.example.com
         <div class="past-employers">
             <h3>Past employers</h3> {% for image in site.static_files %} {% if image.path contains 'images/past-employers' %}
             <div>
-                <img src="{{ image.path }}" alt="past-employers">
+                {% assign word = image.path | split: "-" %} {% if word[2] %}
+                <a href="http://{{ word[2] }}" target="_blank">
+                    <img src="{{ image.path }}" alt="past-employers">
+                </a>
+                {%else%}
+                <img src="{{ image.path }}" alt="past-employers"> {% endif %}
             </div>
             {% endif %} {% endfor %}
         </div>
@@ -111,7 +115,7 @@ resume_link: http://www.example.com
             </form>
         </div>
     </div>
-    <div class="faq-section">
+    <div class="faq-section" id = "faq">
         <div class="faq-container">
             <h3>Frequently Asked Questions</h3>
             <h4>What is the resume submission portal?</h4>
