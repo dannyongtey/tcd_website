@@ -3,9 +3,11 @@ layout: default
 reg_link: http://www.example.com 
 proposal_link: http://www.example.com 
 logo_link: /images/logo.png 
+resume_link: http://www.example.com 
 ---
+
 <div class="home">
-    <div class="hero-section" id = "register">
+    <div class="hero-section" id="register">
         <div id="particles-js" class="particles"></div>
         <h3 class="event-name">Tech Career Days</h3>
         <h4 class="event-tagline">"Where headhunters meet jobhunters"</h4>
@@ -14,7 +16,7 @@ logo_link: /images/logo.png
             <li><a href="{{ page.proposal_link }}">Sponsorship Proposal</a></li>
         </ul>
     </div>
-    <div class="about-section" id = "about">
+    <div class="about-section" id="about">
         <h3 class="about-title" id="about-title">
     		About Tech Career Days
     	</h3>
@@ -22,6 +24,7 @@ logo_link: /images/logo.png
             <p>
                 Tech Career Days (formerly known as IT Career Week) is an annual 2-days tech jobs fair organized by IT Society MMU Cyberjaya that aims to address the needs of startups and tech companies to find tech talents while at the same time help students secure internships, full-time or freelance jobs as well as explore possible career paths in the future.
             </p>
+            <br>
             <p>
                 Find talents. Make valueable connections. Be part of Tech Career Days.
             </p>
@@ -31,7 +34,7 @@ logo_link: /images/logo.png
  							 	Why the Name Change?
         		</h3>
             <p>
-                If you have participated in IT Career Week before, you might be wondering the reason for the name change. It is part of rebranding IT Career Week, as we found that the term "days" describes the event duration better than "week".
+                If you have participated in IT Career Week before, you might be wondering the reason for the name change. It is part of rebranding IT Career Week, as we found that the term "days" better describes the event duration than "week", since the event runs for two days rather than the whole week.
             </p>
         </div>
     </div>
@@ -51,58 +54,87 @@ logo_link: /images/logo.png
             {% endif %} {% endfor %}
         </div>
     </div>
-    <div class="sponsors-section" id = "sponsors">
+    <div class="sponsors-section" id="sponsors">
         <div class="employers-div">
-            <h3>Participating Employers</h3>
-            {% for image in site.static_files %} 
-            {% if image.path contains 'images/current-employers' %}
+            <h3>Participating Employers</h3> {% for image in site.static_files %} {% if image.path contains 'images/current-employers' %}
             <div>
-            	{% assign word = image.path | split: "-" %}
-            	{% if word[2] %}
-            	<a href = "http://{{ word[2] }}">
-                <img src="{{ image.path }}" alt="participating-employers">
-            	</a>
-            	{%else%}
-            		<img src="{{ image.path }}" alt="participating-employers">
-            	{% endif %}
+                {% assign word = image.path | split: "-" %} {% if word[2] %}
+                <a href="http://{{ word[2] }}" target="_blank">
+                    <img src="{{ image.path }}" alt="participating-employers">
+                </a>
+                {%else%}
+                <img src="{{ image.path }}" alt="participating-employers"> {% endif %}
             </div>
-            {% endif %} 
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
-        <div class = "supporting-div">
-        <h3>Supporting Partners</h3>
-        	  {% for image in site.static_files %} 
-            {% if image.path contains 'images/supporting-partners' %}
+        <div class="supporting-div">
+            <h3>Supporting Partners</h3> {% for image in site.static_files %} {% if image.path contains 'images/supporting-partners' %}
             <div>
-              {% assign word = image.path | split: "-" %}
-            	{% if word[2] %}
-            	<a href = "http://{{ word[2] }}">
-                <img src="{{ image.path }}" alt="supporting-partners">
-            	</a>
-            	{%else%}
-            		<img src="{{ image.path }}" alt="supporting-partners">
-            	{% endif %}
+                {% assign word = image.path | split: "-" %} {% if word[2] %}
+                <a href="http://{{ word[2] }}" target="_blank">
+                    <img src="{{ image.path }}" alt="supporting-partners">
+                </a>
+                {%else%}
+                <img src="{{ image.path }}" alt="supporting-partners"> {% endif %}
             </div>
-            {% endif %} 
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
         <br>
-        <div class = "media-div">
-        <h3>Media Partners</h3>
-        	  {% for image in site.static_files %} 
-            {% if image.path contains 'images/media-partners' %}
+        <div class="media-div">
+            <h3>Media Partners</h3> {% for image in site.static_files %} {% if image.path contains 'images/media-partners' %}
             <div>
-              {% assign word = image.path | split: "-" %}
-            	{% if word[2] %}
-            	<a href = "http://{{ word[2] }}">
-                <img src="{{ image.path }}" alt="media-partners">
-            	</a>
-            	{%else%}
-            		<img src="{{ image.path }}" alt="media-partners">
-            	{% endif %}
+                {% assign word = image.path | split: "-" %} {% if word[2] %}
+                <a href="http://{{ word[2] }}">
+                    <img src="{{ image.path }}" alt="media-partners">
+                </a>
+                {%else%}
+                <img src="{{ image.path }}" alt="media-partners"> {% endif %}
             </div>
-            {% endif %} 
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
     </div>
+    <div class="contact-section">
+        <h3>Join Us</h3>
+        <p class="top">Interested to become one of our awesome employers or sponsors?</p>
+        <p>Feel free to drop us a message to express your interest and check what's available.</p>
+        <div style="display:none;" id="thankyou_message">
+            <p>Thanks for getting in touch. We will get back to you as soon as possible.</p>
+        </div>
+        <div class="form-container">
+            <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyWzIcnZjxJ6G3ngzzlEhrzcywQxO4K0mc7eAwk5xZP3GdASc4/exec">
+                <input class="input-half" name="name" type="text" id="name" placeholder="Contact name" required>
+                <input class="input-half" name="company name" type="text" id="company name" placeholder="Company name" required>
+                <input class="input-full" name="email" type="email" id="email" placeholder="Email Address" required>
+                <textarea class="input-full" name="message" type="text" id="message" placeholder="Message" rows="3" required></textarea>
+                <button class="input-full" type="submit" id="submit-button">Submit</button>
+                <a class="input-full" href="{{ page.proposal_link }}">Sponsorship Proposal</a>
+            </form>
+        </div>
+    </div>
+    <div class="faq-section">
+        <div class="faq-container">
+            <h3>Frequently Asked Questions</h3>
+            <h4>What is the resume submission portal?</h4>
+            <p><b>Students</b>
+                <br>The resume submission portal is where students can upload resume to get advices from Tech Career Days volunteers. Approved resumes will be available for employers to view before the event, hence allowing students to get contacted by employers before the event. The rules(do not apply to freelancers) can be found <a href="{{ page.resume_link }}">here</a>.
+                <br>
+                <br>
+                <b>Employers</b>
+                <br>After the resume submission portal is open, all employers will be able to view pre-screened students' resumes to find suitable canditates and contact them before the event.</p>
+            <h4>What's the target audience?</h4>
+            <p>From what we learn earlier this year, we are expecting to see about 600-700 students, mainly but not limited to penultimate and final year students doing degree in computer science. We do welcome others from diploma, postgraduate in IT, as well as those from other faculties to check out the event. Detailed statistics and breakdowns are available in our proposal.</p>
+            <h4>What are the activities that's going to happen during the event?</h4>
+            <p>- Students-employers interaction
+                <br> - Networking lunch (get together session where lecturers, committees and employers sit together and have discussion)
+                <br> - On-the-spot interview
+                <br> - Resume clinics
+                <br> - Lucky draws
+                <br> - 45 minutes Tech/Career Advice (incorporated with our signature weekly initiatives - Tech Talk Thursday or #TTT)</p>
+            <h4>How much is the admission fee?</h4>
+            <p>It's free of charge for students. However, we do charge minimum fees for employers. IT Career Week is 100% non-profit student-run event. As such, we will need your help and contribution to make the event possible.</p>
+            <h4>What would happen should there is excess in the contribution from sponsorship?</h4>
+            <p>If there is any, we will channel the excess to fund our future workshops, tech talks, codelabs, barcamps, etc.</p>
+        </div>
+    </div>
+
 </div>
