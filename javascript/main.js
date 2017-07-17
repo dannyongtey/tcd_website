@@ -123,7 +123,7 @@ $(".nav-links .smooth").on('click', 'a', function(event) {
     event.preventDefault();
 
     $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top -20
+        scrollTop: $($.attr(this, 'href')).offset().top - 20
     }, 500);
 });
 $("#photos-section > div:gt(0)").hide();
@@ -134,7 +134,9 @@ var eventNameTop = $(".event-name").position().top;
 var eventDateTop = $(".event-date").position().top;
 var prevTop = $(".prev-wong").position().top;
 var prevLeft = parseInt($(".prev-wong").css("left").match(/\d+/)[0]);
-$(window).scroll(function(e) {
+$(window).resize(function(){
+    if ($(window).width() >= 800){  
+        $(window).scroll(function(e) {
 
         var scrollTop = $(window).scrollTop();
         if (scrollTop >= $(".hero-section").innerHeight()) {
@@ -164,4 +166,7 @@ $(window).scroll(function(e) {
             $('.prev-wong').removeClass("animate")
         }
     })
+    }   
+});
+
     // })
