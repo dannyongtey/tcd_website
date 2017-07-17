@@ -525,13 +525,26 @@
                         box-sizing: border-box;
                         margin: 10px;
                     }
+                    .sponsors-section,
+                    .supporting-div,
+                    .media-div {
+                        max-width: 90%;
+                        margin: auto;
+                        display: block;
+                    }
+                    .employers-div img,
+                    .supporting-div img,
+                    .media-div img {
+                        width: 20vw;
+                        height: 20vw;
+                        margin: 40px;
+                    }
                     .form-container {
                         width: 100%;
                     }
                     .form-container .input-half,
                     .form-container .input-full {
                         font-size: 1.5em;
-
                     }
                     .faq-section .faq-container {
                         margin: auto;

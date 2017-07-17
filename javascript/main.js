@@ -134,10 +134,9 @@ var eventNameTop = $(".event-name").position().top;
 var eventDateTop = $(".event-date").position().top;
 var prevTop = $(".prev-wong").position().top;
 var prevLeft = parseInt($(".prev-wong").css("left").match(/\d+/)[0]);
-$(window).resize(function(){
-    if ($(window).width() >= 800){  
-        $(window).scroll(function(e) {
 
+$(window).scroll(function(e) {
+    if ($(window).width() >= 800) {
         var scrollTop = $(window).scrollTop();
         if (scrollTop >= $(".hero-section").innerHeight()) {
             $(".header").addClass("black");
@@ -165,8 +164,8 @@ $(window).resize(function(){
         } else {
             $('.prev-wong').removeClass("animate")
         }
-    })
-    }   
-});
+    }
+})
 
-    // })
+
+// })
