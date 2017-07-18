@@ -260,7 +260,7 @@
                 .event-stats .past-employers {
                     width: 35%;
                     float: right;
-                    margin-right: 5%;
+                    margin-right: 3%;
                     overflow: auto;
                 }
                 
@@ -279,8 +279,10 @@
                 }
                 
                 .event-stats .past-employers h3 {
-                    font-size: 1.5em;
+                    font-size: 2.5em;
                     margin: 12px 0 0 1vh;
+                    text-align: center;
+                    color: #18469d;
                 }
                 /*SPONSORS SECTION */
                 
