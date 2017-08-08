@@ -38,7 +38,7 @@ logo_link: /images/logo.png
             {% endif %} {% endfor %}
         </div>
         <div class="past-employers">
-            <h3>Past employers</h3> {% for image in site.static_files %} {% if image.path contains 'images/past-employers' %}
+            <h3>Past Employers</h3> {% for image in site.static_files %} {% if image.path contains 'images/past-employers' %}
             <div>
                 {% assign word = image.path | split: "-" %} {% if word[2] %}
                 <a href="http://{{ word[2] }}" target="_blank">
