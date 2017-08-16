@@ -74,7 +74,7 @@ top: 0;
 
 .header .prev-wong img {
 transition: 0.2s ease-in;
-height: 25vh;
+height: 40vh;
 width: auto;
 top: 0;
 position: relative;
@@ -223,11 +223,10 @@ font-size:15px;
 
 .about-section .about-title {
 margin-top: 50px;
-font-size: 2.5em;
 text-align: left;
 text-align: center;
 text-transform: uppercase;
-font-size: 14px;
+font-size: 20px;
 letter-spacing: 2px;
 }
 
@@ -260,10 +259,52 @@ max-width: 60%;
 display: inline-block;
 }
 
+.photos-section .link-section{
+    position: absolute;
+    display: block;
+    z-index: 20;
+    width: 60%;
+    height: 70vh;
+    transition: 0.5s ease-in-out;
+}
+
+.photos-section .link-section:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.photos-section a.hover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+    color: transparent;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    line-height: 50vh;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    transition: 0.5s ease-in-out;
+}
+
+.photos-section a.hover:hover{
+    color: #fff;
+}
+
+.photos-section:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.photos-section .images {
+    z-index: -2;
+}
+
 .photos-section img {
 max-width: 100%;
 height: 70vh;
+z-index: -2;
 }
+
 
 .event-stats .past-employers {
 width: 35%;
@@ -476,7 +517,12 @@ body {
 .hero-section {
     margin-top: -10vh;
 }
-.hero-section .event-buttons li {
+
+.hero-section .event-date{
+    margin-top: 35vh;
+    
+}.hero-section .event-buttons li {
+    
     width: 100%;
 }
 .hero-section .event-buttons li~li {
