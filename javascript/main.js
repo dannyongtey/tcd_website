@@ -1,10 +1,13 @@
 // document.addEventListener("DOMContentLoaded", function(event){
 
 $(document).ready(function() {
-    $("#event-date").css("visibility", "hidden");
-    setTimeout(function() {
-        $("#event-date").css("visibility", "visible").hide().fadeIn("slow");
-    }, 500)
+    setTimeout(function(){
+        var heroDate = document.querySelector("#event-date");
+        heroDate.classList.add("show");     
+    }
+    ,1000);
+
+
 
     particlesJS("particles-js", {
         "particles": {
@@ -126,10 +129,21 @@ $(".nav-links .smooth").on('click', 'a', function(event) {
         scrollTop: $($.attr(this, 'href')).offset().top - 20
     }, 500);
 });
-$("#photos-section > div:gt(0)").hide();
-setInterval(function() {
-    $("#photos-section > div:first").fadeOut(1000).next().delay(1000).fadeIn(1000).end().appendTo("#photos-section");
-}, 4000);
+var images = document.querySelectorAll(".event-stats .image");
+var count = 0;
+var image_length = images.length;
+images[count].classList.add("active");
+function animImage(){
+    images[count].classList.remove("active");
+    setTimeout(500);
+    if (count == images.length - 1){
+        count = 0;
+    }else{
+        count++;
+    }
+    images[count].classList.add("active");
+}
+setInterval(animImage, 4000);
 var eventNameTop = $(".event-name").position().top;
 var eventDateTop = $(".event-date").position().top;
 var prevTop = $(".prev-wong").position().top;

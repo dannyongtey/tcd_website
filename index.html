@@ -37,7 +37,7 @@ logo_link: /images/logo.png
         
             {% for image in site.static_files %} {% if image.path contains 'images/event-photos' %}
             <div class = "images">
-                <img src="{{ image.path }}" alt="event-photo">
+                <img src="{{ image.path }}" class = "image" alt="event-photo">
             </div>
             {% endif %} {% endfor %}
         </div>
@@ -132,7 +132,7 @@ logo_link: /images/logo.png
                 <br> - On-the-spot interview
                 <br> - Resume clinics
                 <br> - Lucky draws
-                <br> - 45 minutes Tech/Career Advice (incorporated with our signature weekly initiatives - Tech Talk Thursday or #TTT)</p>
+                
             <h4>How much is the admission fee?</h4>
             <p>It's free of charge for students. However, we do charge minimum fees for employers. IT Career Week is 100% non-profit student-run event. As such, we will need your help and contribution to make the event possible.</p>
             <h4>What would happen should there is excess in the contribution from sponsorship?</h4>
@@ -141,3 +141,5 @@ logo_link: /images/logo.png
     </div>
 
 </div>
+
+
