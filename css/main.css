@@ -638,6 +638,13 @@ display: block;
     margin: auto;
     display: block;
 }
+
+.employers-div div,
+.supporting-div div, 
+.media-div div{
+    margin: 10px 10px 10px 0;
+    width: 45%;
+}
 .employers-div img,
 .supporting-div img,
 .media-div img {
